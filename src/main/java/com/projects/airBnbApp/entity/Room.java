@@ -1,5 +1,6 @@
 package com.projects.airBnbApp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +20,7 @@ public class Room {
 
     @ManyToOne
     @JoinColumn(name = "hotel_id",nullable = false)
+    @JsonIgnore
     private Hotel hotel;
 
     @Column(nullable = false)
@@ -31,7 +33,7 @@ public class Room {
     private String[] photos;
 
     @Column(columnDefinition = "TEXT[]")
-    private String amenities;
+    private String[] amenities;
 
     @Column(nullable = false)
     private Integer totalCount;
