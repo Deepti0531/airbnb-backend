@@ -1,9 +1,15 @@
-HELP.md
+# Project build directories
 target/
+build/
 .mvn/wrapper/maven-wrapper.jar
+
+# Include build folders inside src only if needed
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
+# IDEs
 ### STS ###
 .apt_generated
 .classpath
@@ -25,9 +31,17 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ignore environment / sensitive config files
+application.properties
+*.env
